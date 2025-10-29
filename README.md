@@ -1,5 +1,4 @@
-ML and Research Task Submissions – Mohammad Shaikh
-Welcome!
+ML and Research Task Submissions
 
 My name is Mohammad Shaikh.
 I am part of the IT department here in GDG, focusing on Machine Learning and Research.
