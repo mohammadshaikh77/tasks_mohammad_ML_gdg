@@ -1,0 +1,151 @@
+Unsupervised and Supervised Learning Exploration
+
+Project Description
+
+This project delves into various machine learning algorithms, covering both unsupervised and supervised learning paradigms. The primary goal is to explore, implement, and visualize the workings of different clustering and classification techniques, evaluating their performance on real-world datasets. We begin by examining unsupervised learning through clustering algorithms like K-Means, Agglomerative Clustering, DBSCAN, and Mean Shift on the Samsung Human Activity Recognition dataset. Subsequently, we transition to supervised learning, implementing Decision Trees, Naive Bayes, Random Forests, Bagging Classifiers, and AdaBoost on the Titanic dataset, focusing on classification and optimization techniques such as GridSearchCV and Decision Tree Pruning.
+
+Datasets
+
+Samsung Human Activity Recognition Dataset
+
+This dataset originates from accelerometers and gyroscopes embedded in Samsung mobile phones. It comprises sensor readings collected during various human activities. The goal for unsupervised learning is to group these readings into clusters that ideally correspond to the six distinct activities performed by the subjects: walking, going up the stairs, going down the stairs, sitting, standing, and lying down. The dataset is provided without explicit activity labels for the clustering task, simulating an unlabelled scenario.
+
+Titanic Dataset
+
+The Titanic dataset is a classic classification benchmark, used here to predict the survival of passengers on the ill-fated RMS Titanic. It contains various features such as PassengerId, Survived, Pclass, Name, Sex, Age, SibSp (number of siblings/spouses aboard), Parch (number of parents/children aboard), Ticket, Fare, Cabin, and Embarked. The task is to build a classification model to determine whether a passenger survived based on these attributes.
+
+Setup Instructions
+
+To run this notebook, ensure you have the following Python libraries installed. You can install them using pip:
+
+pip install numpy pandas matplotlib scikit-learn yellowbrick ipywidgets graphviz
+Required Libraries:
+
+numpy
+pandas
+matplotlib
+scikit-learn
+yellowbrick (for elbow method visualization)
+ipywidgets (for interactive visualizations)
+graphviz (for decision tree visualization)
+Clustering Algorithms
+
+K-Means Clustering
+
+K-Means is a partition-based clustering algorithm that groups data points into k distinct, non-overlapping clusters. It aims to minimize the sum of squared distances between data points and their respective cluster centroids. Each data point is assigned to the cluster whose centroid is closest. It is widely used for customer segmentation, image compression, and document analysis.
+
+Agglomerative Clustering
+
+Agglomerative Clustering is a hierarchical clustering algorithm that follows a
+
+bottom-up" approach. It starts with each data point as its own cluster and then progressively merges the closest clusters until a desired number of clusters is reached or a stopping criterion is met. This algorithm produces a dendrogram, which is a tree-like diagram that records the sequence of merges or splits.
+
+DBSCAN Clustering
+
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm capable of discovering clusters of arbitrary shapes. It defines clusters as areas of high density separated by areas of lower density. DBSCAN is effective at identifying noise (outliers) and does not require specifying the number of clusters beforehand, relying instead on two parameters: eps (maximum distance between two samples for one to be considered as in the neighborhood of the other) and min_samples (the number of samples in a neighborhood for a point to be considered as a core point).
+
+Mean Shift Clustering
+
+Mean Shift is another density-based, non-parametric clustering algorithm that does not require prior knowledge of the number of clusters. It works by iteratively shifting data points towards the mode (peak) of the density function in their vicinity. The algorithm treats data points as a probability density function and seeks the local maxima of this function. Clusters are formed by data points that converge to the same mode. It is particularly useful for image segmentation and situations where clusters have varying densities and shapes.
+
+Classification Algorithms
+
+Decision Tree Classifier
+
+A Decision Tree Classifier is a supervised learning algorithm that uses a tree-like model of decisions and their possible consequences. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. It's highly interpretable and can handle both numerical and categorical data, but is prone to overfitting.
+
+Naive Bayes Algorithm
+
+The Naive Bayes algorithm is a probabilistic classifier based on Bayes' theorem with the 'naive' assumption of independence between features. Despite this simplification, Naive Bayes classifiers have proven to be highly effective in many real-world applications, especially in text classification and spam filtering. They are known for their simplicity, speed, and efficiency.
+
+Random Forest Classifier
+
+Random Forest is an ensemble learning method that operates by constructing a multitude of decision trees during training. For classification tasks, the output of the Random Forest is the class selected by most trees (voting). It addresses the overfitting problem of individual decision trees and generally provides higher accuracy and better generalization due to its ensemble nature and the randomness introduced during tree construction (bootstrapping and feature randomness).
+
+Bagging Classifier
+
+Bagging (Bootstrap Aggregating) is an ensemble meta-algorithm that aims to improve the stability and accuracy of machine learning algorithms. It works by training multiple base estimators (e.g., decision trees) on different bootstrap samples (random subsets with replacement) of the training dataset. The final prediction is made by averaging (for regression) or majority voting (for classification) the predictions of the individual base estimators. It primarily helps in reducing variance.
+
+AdaBoost (Adaptive Boosting) Classifier
+
+AdaBoost is a boosting ensemble method that works by training a series of weak learners sequentially, with each subsequent learner focusing on the misclassified examples from the previous one. It assigns weights to training data points, increasing the weight of misclassified samples so that subsequent learners pay more attention to them. The final prediction is a weighted sum of the predictions of all weak learners. It is particularly effective at reducing bias and can be robust to overfitting if carefully tuned.
+
+Optimization Techniques
+
+GridSearchCV for Hyperparameter Tuning
+
+GridSearchCV is a technique for systematically working through multiple combinations of parameter tunes to find the best values for a given model. It exhaustively searches over a specified parameter grid, fitting the estimator for each parameter combination and evaluating it using cross-validation. This automates the process of finding optimal hyperparameters, which can significantly improve model performance.
+
+Decision Tree Pruning
+
+Pruning techniques are used to reduce the size of decision trees by removing branches that have little power to classify instances. The goal is to prevent overfitting and improve the generalization capability of the tree to unseen data. Cost-complexity pruning (CCP), also known as weakest link pruning, is a common method that simplifies the tree by considering a trade-off between the tree's complexity and its accuracy on the training data, using a parameter ccp_alpha.
+
+Key Findings
+
+After implementing and evaluating various clustering and classification algorithms, including optimization techniques such as hyperparameter tuning with GridSearchCV and Decision Tree pruning, the Random Forest Classifier emerged as the most optimal model for the Titanic dataset. It provided the best balance of accuracy and generalization, effectively mitigating overfitting compared to a single Decision Tree. The final accuracy achieved by the optimized Random Forest model on the test set was approximately 82.09%.
+
+Compulsory Tasks
+
+Spectral Clustering Algorithm and Divisive Clustering
+
+This task involves researching and creating a short blog post on the Spectral Clustering algorithm and Divisive Clustering. This includes understanding their theoretical underpinnings, how they differ from other clustering methods, and their typical applications.
+
+XGBoost and AdaBoost Classifier and Regressor: A Comparative Overview
+
+This task requires a comparative analysis of XGBoost and AdaBoost algorithms for both classification and regression tasks. The comparison should cover their commonalities, core ideas, base learners, strengths, limitations, and key differences, as well as guidance on when to use each algorithm.
+
+bottom-up" approach. It starts with each data point as its own cluster and then progressively merges the closest clusters until a desired number of clusters is reached or a stopping criterion is met. This algorithm produces a dendrogram, which is a tree-like diagram that records the sequence of merges or splits.
+
+DBSCAN Clustering
+
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm capable of discovering clusters of arbitrary shapes. It defines clusters as areas of high density separated by areas of lower density. DBSCAN is effective at identifying noise (outliers) and does not require specifying the number of clusters beforehand, relying instead on two parameters: eps (maximum distance between two samples for one to be considered as in the neighborhood of the other) and min_samples (the number of samples in a neighborhood for a point to be considered as a core point).
+
+Mean Shift Clustering
+
+Mean Shift is another density-based, non-parametric clustering algorithm that does not require prior knowledge of the number of clusters. It works by iteratively shifting data points towards the mode (peak) of the density function in their vicinity. The algorithm treats data points as a probability density function and seeks the local maxima of this function. Clusters are formed by data points that converge to the same mode. It is particularly useful for image segmentation and situations where clusters have varying densities and shapes.
+
+Classification Algorithms
+
+Decision Tree Classifier
+
+A Decision Tree Classifier is a supervised learning algorithm that uses a tree-like model of decisions and their possible consequences. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. It's highly interpretable and can handle both numerical and categorical data, but is prone to overfitting.
+
+Naive Bayes Algorithm
+
+The Naive Bayes algorithm is a probabilistic classifier based on Bayes' theorem with the 'naive' assumption of independence between features. Despite this simplification, Naive Bayes classifiers have proven to be highly effective in many real-world applications, especially in text classification and spam filtering. They are known for their simplicity, speed, and efficiency.
+
+Random Forest Classifier
+
+Random Forest is an ensemble learning method that operates by constructing a multitude of decision trees during training. For classification tasks, the output of the Random Forest is the class selected by most trees (voting). It addresses the overfitting problem of individual decision trees and generally provides higher accuracy and better generalization due to its ensemble nature and the randomness introduced during tree construction (bootstrapping and feature randomness).
+
+Bagging Classifier
+
+Bagging (Bootstrap Aggregating) is an ensemble meta-algorithm that aims to improve the stability and accuracy of machine learning algorithms. It works by training multiple base estimators (e.g., decision trees) on different bootstrap samples (random subsets with replacement) of the training dataset. The final prediction is made by averaging (for regression) or majority voting (for classification) the predictions of the individual base estimators. It primarily helps in reducing variance.
+
+AdaBoost (Adaptive Boosting) Classifier
+
+AdaBoost is a boosting ensemble method that works by training a series of weak learners sequentially, with each subsequent learner focusing on the misclassified examples from the previous one. It assigns weights to training data points, increasing the weight of misclassified samples so that subsequent learners pay more attention to them. The final prediction is a weighted sum of the predictions of all weak learners. It is particularly effective at reducing bias and can be robust to overfitting if carefully tuned.
+
+Optimization Techniques
+
+GridSearchCV for Hyperparameter Tuning
+
+GridSearchCV is a technique for systematically working through multiple combinations of parameter tunes to find the best values for a given model. It exhaustively searches over a specified parameter grid, fitting the estimator for each parameter combination and evaluating it using cross-validation. This automates the process of finding optimal hyperparameters, which can significantly improve model performance.
+
+Decision Tree Pruning
+
+Pruning techniques are used to reduce the size of decision trees by removing branches that have little power to classify instances. The goal is to prevent overfitting and improve the generalization capability of the tree to unseen data. Cost-complexity pruning (CCP), also known as weakest link pruning, is a common method that simplifies the tree by considering a trade-off between the tree's complexity and its accuracy on the training data, using a parameter ccp_alpha.
+
+Key Findings
+
+After implementing and evaluating various clustering and classification algorithms, including optimization techniques such as hyperparameter tuning with GridSearchCV and Decision Tree pruning, the Random Forest Classifier emerged as the most optimal model for the Titanic dataset. It provided the best balance of accuracy and generalization, effectively mitigating overfitting compared to a single Decision Tree. The final accuracy achieved by the optimized Random Forest model on the test set was approximately 82.09%.
+
+Compulsory Tasks
+
+Spectral Clustering Algorithm and Divisive Clustering
+
+This task involves researching and creating a short blog post on the Spectral Clustering algorithm and Divisive Clustering. This includes understanding their theoretical underpinnings, how they differ from other clustering methods, and their typical applications.
+
+XGBoost and AdaBoost Classifier and Regressor: A Comparative Overview
+
+This task requires a comparative analysis of XGBoost and AdaBoost algorithms for both classification and regression tasks. The comparison should cover their commonalities, core ideas, base learners, strengths, limitations, and key differences, as well as guidance on when to use each algorithm.
